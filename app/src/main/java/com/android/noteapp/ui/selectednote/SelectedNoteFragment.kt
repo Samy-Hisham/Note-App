@@ -1,4 +1,4 @@
-package com.android.noteapp.ui.home
+package com.android.noteapp.ui.selectednote
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +22,7 @@ class SelectedNoteFragment : Fragment() {
     private var _binding: FragmentSelectedNoteBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: SelectedNoteViewModel by viewModels()
 
     lateinit var noteEdt: EditText
 

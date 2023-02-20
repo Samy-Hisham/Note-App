@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
-        android:name="com.android.noteapp.ui.home.AddNoteFragment"
+        android:name="com.android.noteapp.ui.addnote.AddNoteFragment"
         android:label="fragment_add_note"
         tools:layout="@layout/fragment_add_note" />
     <fragment
         android:id="@+id/selectedNoteFragment"
-        android:name="com.android.noteapp.ui.home.SelectedNoteFragment"
+        android:name="com.android.noteapp.ui.selectednote.SelectedNoteFragment"
         android:label="fragment_selected_note"
         tools:layout="@layout/fragment_selected_note" >
         <argument

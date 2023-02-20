@@ -1,6 +1,5 @@
-package com.android.noteapp.ui.home
+package com.android.noteapp.ui.addnote
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,28 +11,19 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel
-@Inject constructor(private val repo: Repo) : ViewModel() {
+class AddNoteViewModel@Inject constructor(private val repo: Repo) : ViewModel() {
 
     private var _message = MutableLiveData<String>()
     val message get() = _message
 
-    val allNote: LiveData<List<ModelNote>>
-
-    init {
-        allNote = repo.allNotes
-    }
-
-    fun deleteNote(note: ModelNote) {
+    fun addNote(note: ModelNote) {
 
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                repo.delete(note)
+                repo.addNote(note)
             } catch (e: Exception) {
                 _message.postValue(e.message)
             }
         }
     }
-
-
 }
